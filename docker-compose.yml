@@ -1,0 +1,11 @@
+services:
+  coachingkhoj:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - coachingkhoj_data:/app/data
+volumes:
+  coachingkhoj_data:
