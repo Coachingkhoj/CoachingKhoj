@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-import json, os, secrets, sqlite3, time, csv, io
-from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 
