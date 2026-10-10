@@ -92,4 +92,206 @@
             <label class="block text-xs font-medium text-gray-700 mb-1">Preferred Location</label>
             <input type="text" name="location" placeholder="e.g. Noida Sector 62, Greater Noida, Janakpuri" class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
           </div>
-          <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-md transition duration-200
+          <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-md transition duration-200 text-sm">
+            Request Callback Now 🚀
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Coaching Centers Section with Search & Filter -->
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Explore Top 100 Coaching Institutes in Noida & Delhi</h2>
+      <p class="text-gray-600 text-sm mt-2">Filter and search verified coaching centers for JEE & NEET preparation</p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="bg-white p-4 rounded-xl shadow-md border mb-8 grid md:grid-cols-3 gap-4">
+      <div>
+        <label class="block text-xs font-semibold text-gray-600 mb-1">Search Institute or Location</label>
+        <input type="text" id="searchInput" placeholder="Search Allen, Janakpuri, Sector 62..." class="w-full p-2.5 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-600 mb-1">Filter by Area / City</label>
+        <select id="cityFilter" class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+          <option value="ALL">All Cities & Regions</option>
+          <option value="Noida">Noida</option>
+          <option value="Greater Noida">Greater Noida</option>
+          <option value="South Delhi">South Delhi</option>
+          <option value="East Delhi">East Delhi</option>
+          <option value="West Delhi">West Delhi</option>
+          <option value="North Delhi">North Delhi</option>
+          <option value="Central Delhi">Central Delhi</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-600 mb-1">Filter by Target Exam</label>
+        <select id="examFilter" class="w-full p-2.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+          <option value="ALL">All Competitive Exams</option>
+          <option value="JEE">JEE (Main/Adv)</option>
+          <option value="NEET">NEET Medical</option>
+          <option value="Foundation">Foundation (8th-10th)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Results Counter -->
+    <div class="flex justify-between items-center mb-4 px-1 text-xs text-gray-500">
+      <span id="resultsCount">Showing 100 institutes</span>
+    </div>
+
+    <!-- Coaching Cards Grid Container -->
+    <div id="coachingGrid" class="grid md:grid-cols-3 gap-6">
+      <!-- Dynamic Javascript Content Will Load Here -->
+    </div>
+  </section>
+
+  <!-- FAQ Section for SEO -->
+  <section class="bg-gray-100 py-12 px-4 border-t">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h4 class="font-semibold text-sm text-gray-800">How does CoachingKhoj help students?</h4>
+          <p class="text-xs text-gray-600 mt-1">CoachingKhoj helps students compare top JEE & NEET institutes across Noida & Delhi NCR based on fees, faculty, and location, providing free counseling and demo class bookings.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h4 class="font-semibold text-sm text-gray-800">Are the demo classes free of charge?</h4>
+          <p class="text-xs text-gray-600 mt-1">Yes, all demo class bookings through CoachingKhoj are 100% free with no hidden charges.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <h4 class="font-semibold text-sm text-gray-800">Which locations in Delhi NCR have the best coaching hubs?</h4>
+          <p class="text-xs text-gray-600 mt-1">Sector 62 (Noida), Kalu Sarai / South Ext (South Delhi), Janakpuri (West Delhi), and Laxmi Nagar (East Delhi) are major coaching hubs hosting Allen, Aakash, FIITJEE, and PW Vidyapeeth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Service</a>
+        <a href="#leadForm" class="hover:text-white">Contact Us</a>
+      </div>
+      <p>© 2026 CoachingKhoj. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Embedded 100 Coaching Dataset & Interactive Script -->
+  <script>
+    const coachingData = [
+      // Noida & Greater Noida (1-25)
+      { id: 1, name: "Allen Career Institute", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Multi-story center | Dedicated doubt counters | AITS Test Series", fee: "₹1.3L - ₹1.7L" },
+      { id: 2, name: "Aakash Institute", exam: "NEET / JEE", city: "Noida", loc: "Sector 62", usp: "iTutor app access | AIATS test series | Top medical selection history", fee: "₹1.2L - ₹1.6L" },
+      { id: 3, name: "Aakash Institute", exam: "NEET / JEE", city: "Noida", loc: "Sector 18", usp: "Metro proximity | Dedicated dropper batches | Crash courses", fee: "₹1.2L - ₹1.5L" },
+      { id: 4, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Tech-enabled smart boards | Affordable offline batches | DPP solutions", fee: "₹50k - ₹85k" },
+      { id: 5, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "Noida", loc: "Sector 29", usp: "Focus on top 100 IIT ranks | Intensive test series | Olympiad guidance", fee: "₹1.4L - ₹2.1L" },
+      { id: 6, name: "Motion Education", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Kota faculty | Personalized performance tracking | Small batch options", fee: "₹90k - ₹1.4L" },
+      { id: 7, name: "Narayana IIT Academy", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Micro-schedules | Daily practice tests | South-India curriculum model", fee: "₹1.1L - ₹1.5L" },
+      { id: 8, name: "Unacademy Centre", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Hybrid learning model | Top Kota educators | Digital library access", fee: "₹80k - ₹1.3L" },
+      { id: 9, name: "Pace IIT & Medical", exam: "JEE / NEET", city: "Noida", loc: "Sector 18", usp: "Focus on concept building | Regular parent-teacher meets | Custom modules", fee: "₹1.0L - ₹1.5L" },
+      { id: 10, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Founders-led pedagogy | High selection ratio in IITs | Online portal", fee: "₹1.2L - ₹1.7L" },
+      { id: 11, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "Noida", loc: "Sector 15", usp: "Proximity to metro | Foundation specialized batches for 9th-10th", fee: "₹1.1L - ₹1.5L" },
+      { id: 12, name: "Resonance", exam: "JEE / NEET", city: "Noida", loc: "Sector 62", usp: "Kota study material | Structured revision test series", fee: "₹1.0L - ₹1.4L" },
+      { id: 13, name: "Target PMT / IIT", exam: "NEET / JEE", city: "Noida", loc: "Sector 18", usp: "Special medical dropper batches | Individual attention", fee: "₹80k - ₹1.2L" },
+      { id: 14, name: "Margdarshan Classes", exam: "JEE / NEET", city: "Greater Noida", loc: "Alpha 1", usp: "Local topper batch | Affordable fee structure for local students", fee: "₹60k - ₹90k" },
+      { id: 15, name: "Aakash Institute", exam: "NEET / JEE", city: "Greater Noida", loc: "Alpha 1", usp: "Full facility branch catering to Greater Noida & Yamuna Expressway", fee: "₹1.2L - ₹1.5L" },
+      { id: 16, name: "Allen Career Institute", exam: "JEE / NEET", city: "Greater Noida", loc: "Knowledge Park 3", usp: "Dedicated facility near student hostels & universities", fee: "₹1.3L - ₹1.6L" },
+      { id: 17, name: "Career Launcher", exam: "JEE / CUET", city: "Noida", loc: "Sector 62", usp: "Integrated test prep | Boards + JEE Main combo", fee: "₹70k - ₹1.1L" },
+      { id: 18, name: "Pathfinder Institute", exam: "NEET / JEE", city: "Noida", loc: "Sector 18", usp: "Focus on NCERT line-by-line coverage for NEET bio", fee: "₹70k - ₹1.0L" },
+      { id: 19, name: "Toppers Academy", exam: "NEET / JEE", city: "Noida", loc: "Sector 62", usp: "Small batch size (20 students) | Interactive doubt solving", fee: "₹60k - ₹95k" },
+      { id: 20, name: "IITian's PACE", exam: "JEE (Adv)", city: "Noida", loc: "Sector 27", usp: "Specialized advanced problem-solving sessions", fee: "₹1.2L - ₹1.6L" },
+      { id: 21, name: "Scholar's Academy", exam: "Foundation / JEE", city: "Noida", loc: "Sector 51", usp: "Residential colony center | School integrated coaching", fee: "₹50k - ₹80k" },
+      { id: 22, name: "Apex Institute", exam: "JEE / NEET", city: "Noida", loc: "Sector 18", usp: "One-on-one mentorship | Customized test series", fee: "₹70k - ₹1.1L" },
+      { id: 23, name: "Catalyst Academy", exam: "NEET Special", city: "Noida", loc: "Sector 110", usp: "Focus on Expressways / Sector 137 student base", fee: "₹60k - ₹90k" },
+      { id: 24, name: "Zenith Institute", exam: "JEE / Foundation", city: "Noida", loc: "Sector 34", usp: "Near City Centre Metro | Boards + Mains focus", fee: "₹55k - ₹85k" },
+      { id: 25, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "Greater Noida", loc: "Pari Chowk", usp: "High capacity center for Greater Noida students", fee: "₹50k - ₹80k" },
+
+      // South Delhi & Kalu Sarai / South Ext (26-50)
+      { id: 26, name: "FIITJEE South Delhi", exam: "JEE (Main/Adv)", city: "South Delhi", loc: "Kalu Sarai, Hauz Khas", usp: "FIITJEE National Flagship Center | Highest top 100 AIR producers", fee: "₹1.6L - ₹2.3L" },
+      { id: 27, name: "Allen South Ext.", exam: "NEET / JEE", city: "South Delhi", loc: "South Ext Part 1", usp: "Premier medical preparation center in Delhi", fee: "₹1.4L - ₹1.8L" },
+      { id: 28, name: "Aakash Institute", exam: "NEET Special", city: "South Delhi", loc: "South Ext Part 2", usp: "Aakash National HQ & Flagship Medical Center", fee: "₹1.3L - ₹1.7L" },
+      { id: 29, name: "VMC (Vidyamandir)", exam: "JEE (Main/Adv)", city: "South Delhi", loc: "Anand Lok / Kalu Sarai", usp: "VMC Main Center | Expert Senior Faculty", fee: "₹1.3L - ₹1.8L" },
+      { id: 30, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "South Delhi", loc: "Kalu Sarai", usp: "High demand offline center in Delhi's coaching hub", fee: "₹55k - ₹90k" },
+      { id: 31, name: "Resonance", exam: "JEE / NEET", city: "South Delhi", loc: "Kalu Sarai", usp: "Kota study modules | Experienced faculty", fee: "₹1.1L - ₹1.5L" },
+      { id: 32, name: "Narayana Academy", exam: "JEE / NEET", city: "South Delhi", loc: "Kalu Sarai", usp: "Intensive daily test series regime", fee: "₹1.2L - ₹1.6L" },
+      { id: 33, name: "Pace IIT & Medical", exam: "JEE / NEET", city: "South Delhi", loc: "South Ext Part 1", usp: "Focus on small batch sizes and individual doubts", fee: "₹1.1L - ₹1.5L" },
+      { id: 34, name: "Career Point", exam: "JEE / NEET", city: "South Delhi", loc: "Kalu Sarai", usp: "Kota-based system | Affordable pricing", fee: "₹80k - ₹1.2L" },
+      { id: 35, name: "Unacademy Centre", exam: "JEE / NEET", city: "South Delhi", loc: "South Ext", usp: "Modern classrooms | Top educators", fee: "₹85k - ₹1.3L" },
+      { id: 36, name: "Target PMT", exam: "NEET Medical", city: "South Delhi", loc: "South Ext", usp: "Specialized biology faculties | Rigorous test schedules", fee: "₹85k - ₹1.2L" },
+      { id: 37, name: "Sunroom Classes", exam: "Foundation / JEE", city: "South Delhi", loc: "Hauz Khas", usp: "Personal tutoring & micro-batches", fee: "₹70k - ₹1.1L" },
+      { id: 38, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "East Delhi", loc: "Mayur Vihar Ph-1", usp: "East Delhi flagship center (close to Noida)", fee: "₹1.4L - ₹2.0L" },
+      { id: 39, name: "Aakash Institute", exam: "NEET / JEE", city: "East Delhi", loc: "Mayur Vihar Ph-1", usp: "Directly connected to Noida via Blue Line Metro", fee: "₹1.2L - ₹1.5L" },
+      { id: 40, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "East Delhi", loc: "Laxmi Nagar", usp: "East Delhi hub | High density student center", fee: "₹1.0L - ₹1.4L" },
+      { id: 41, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "East Delhi", loc: "Laxmi Nagar", usp: "High capacity affordable coaching center", fee: "₹50k - ₹85k" },
+      { id: 42, name: "Motion Education", exam: "JEE / NEET", city: "East Delhi", loc: "Preet Vihar", usp: "Kota classroom study material & test series", fee: "₹85k - ₹1.3L" },
+      { id: 43, name: "Catalyst Academy", exam: "NEET / JEE", city: "East Delhi", loc: "Laxmi Nagar", usp: "Medical entrance focused faculty", fee: "₹65k - ₹95k" },
+      { id: 44, name: "Genius Academy", exam: "JEE / Foundation", city: "East Delhi", loc: "Preet Vihar", usp: "School integrated academic preparation", fee: "₹55k - ₹85k" },
+      { id: 45, name: "Career Launcher", exam: "JEE / CUET", city: "East Delhi", loc: "Mayur Vihar Ph-1", usp: "Board exam + entrance prep integration", fee: "₹65k - ₹1.0L" },
+      { id: 46, name: "Aakash Institute", exam: "NEET / JEE", city: "East Delhi", loc: "Vivek Vihar", usp: "Residential locality branch with high focus on foundation", fee: "₹1.1L - ₹1.5L" },
+      { id: 47, name: "Toppers Classes", exam: "JEE / NEET", city: "East Delhi", loc: "Laxmi Nagar", usp: "Individual doubt counters and test practice", fee: "₹50k - ₹80k" },
+      { id: 48, name: "Apex Tutorial", exam: "Foundation", city: "East Delhi", loc: "Nirman Vihar", usp: "Class 8th to 10th NTSE/Olympiad focus", fee: "₹45k - ₹70k" },
+      { id: 49, name: "Narayana Academy", exam: "JEE / NEET", city: "East Delhi", loc: "Preet Vihar", usp: "Rigorous practice schedules and weekly evaluation", fee: "₹1.0L - ₹1.4L" },
+      { id: 50, name: "Pace Academy", exam: "JEE / NEET", city: "East Delhi", loc: "Mayur Vihar Ph-2", usp: "Small batch coaching for personalized tracking", fee: "₹75k - ₹1.1L" },
+
+      // West & North Delhi Hubs (51-75)
+      { id: 51, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "West Delhi", loc: "Punjabi Bagh", usp: "Major West Delhi hub with integrated school programs", fee: "₹1.5L - ₹2.1L" },
+      { id: 52, name: "Aakash Institute", exam: "NEET / JEE", city: "West Delhi", loc: "Janakpuri", usp: "Metro pillar connectivity | Large student strength", fee: "₹1.2L - ₹1.6L" },
+      { id: 53, name: "Allen Career Institute", exam: "JEE / NEET", city: "West Delhi", loc: "Janakpuri", usp: "West Delhi multi-story flagship", fee: "₹1.3L - ₹1.7L" },
+      { id: 54, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "West Delhi", loc: "Janakpuri", usp: "West Delhi tech-enabled classroom", fee: "₹50k - ₹85k" },
+      { id: 55, name: "Unacademy Centre", exam: "JEE / NEET", city: "West Delhi", loc: "Janakpuri", usp: "Digital offline hybrid center", fee: "₹80k - ₹1.2L" },
+      { id: 56, name: "Target PMT", exam: "NEET Medical", city: "West Delhi", loc: "Janakpuri", usp: "Exclusively focused on NEET biology & chemistry", fee: "₹85k - ₹1.2L" },
+      { id: 57, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "West Delhi", loc: "Dwarka Sector 12", usp: "Integrated school batch setup | Local convenience", fee: "₹1.4L - ₹2.0L" },
+      { id: 58, name: "Allen Career Institute", exam: "JEE / NEET", city: "West Delhi", loc: "Dwarka Sector 11", usp: "Complete JEE/NEET setup for Dwarka sub-city", fee: "₹1.3L - ₹1.6L" },
+      { id: 59, name: "Margshree Classes", exam: "JEE / NEET", city: "West Delhi", loc: "Dwarka Sector 7", usp: "Local reputation for board + competitive prep", fee: "₹60k - ₹90k" },
+      { id: 60, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "North Delhi", loc: "Pitampura", usp: "North Delhi prime center | Proven results", fee: "₹1.2L - ₹1.6L" },
+      { id: 61, name: "Aakash Institute", exam: "NEET / JEE", city: "North Delhi", loc: "Pitampura", usp: "Specialized dropper batches for medical aspirants", fee: "₹1.2L - ₹1.5L" },
+      { id: 62, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "North Delhi", loc: "Rohini Sector 8", usp: "Rohini flagship center for competitive exams", fee: "₹1.4L - ₹2.0L" },
+      { id: 63, name: "Allen Career Institute", exam: "JEE / NEET", city: "North Delhi", loc: "Rohini Sector 7", usp: "North Delhi hub for JEE & NEET", fee: "₹1.3L - ₹1.7L" },
+      { id: 64, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "North Delhi", loc: "Rohini Sector 8", usp: "Offline smart learning center in North Delhi", fee: "₹50k - ₹85k" },
+      { id: 65, name: "Aakash Institute", exam: "NEET / JEE", city: "North Delhi", loc: "Model Town", usp: "Near Delhi University North Campus area", fee: "₹1.2L - ₹1.5L" },
+      { id: 66, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "North Delhi", loc: "Kingsway Camp", usp: "Classic flagship setup near GTB Nagar metro", fee: "₹1.2L - ₹1.6L" },
+      { id: 67, name: "Pace IIT", exam: "JEE / NEET", city: "North Delhi", loc: "Pitampura", usp: "Focus on advanced problem solving", fee: "₹1.0L - ₹1.4L" },
+      { id: 68, name: "Narayana Academy", exam: "JEE / NEET", city: "North Delhi", loc: "Rohini Sector 9", usp: "South Indian test methodology for medical & engineering", fee: "₹1.1L - ₹1.5L" },
+      { id: 69, name: "Scholar's Hub", exam: "Foundation / JEE", city: "North Delhi", loc: "Model Town", usp: "Special focus on 8th-10th NTSE & Olympiads", fee: "₹50k - ₹80k" },
+      { id: 70, name: "Career Launcher", exam: "JEE / CUET", city: "North Delhi", loc: "Pitampura", usp: "Integrated entrance exam preparation", fee: "₹65k - ₹1.0L" },
+      { id: 71, name: "Target Institute", exam: "NEET Special", city: "North Delhi", loc: "Kingsway Camp", usp: "Dropper special batches for NEET", fee: "₹75k - ₹1.1L" },
+      { id: 72, name: "Matrix Academy", exam: "JEE (Main)", city: "West Delhi", loc: "Uttam Nagar", usp: "Local accessible center with experienced faculty", fee: "₹50k - ₹75k" },
+      { id: 73, name: "Success Mantra", exam: "JEE / NEET", city: "North Delhi", loc: "GTB Nagar", usp: "Competitive exam foundation center", fee: "₹55k - ₹85k" },
+      { id: 74, name: "Aakash Institute", exam: "NEET / JEE", city: "West Delhi", loc: "Paschim Vihar", usp: "Convenient center for Paschim Vihar/Peeragarhi students", fee: "₹1.1L - ₹1.5L" },
+      { id: 75, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "West Delhi", loc: "Punjabi Bagh", usp: "Proven selection track record in IIT-JEE", fee: "₹1.2L - ₹1.6L" },
+
+      // Central & Regional Extended Centers (76-100)
+      { id: 76, name: "Target PMT", exam: "NEET Medical", city: "Central Delhi", loc: "Karol Bagh", usp: "Central location accessible via Blue Line Metro", fee: "₹85k - ₹1.2L" },
+      { id: 77, name: "Aakash Institute", exam: "NEET / JEE", city: "Central Delhi", loc: "Pusa Road / Karol Bagh", usp: "Historic flagship center of Aakash", fee: "₹1.2L - ₹1.6L" },
+      { id: 78, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "Central Delhi", loc: "Pusa Road", usp: "Central Delhi center for IIT aspirants", fee: "₹1.4L - ₹2.0L" },
+      { id: 79, name: "Career Launcher", exam: "JEE / CUET", city: "Central Delhi", loc: "Connaught Place", usp: "Corporate branch with top mentors", fee: "₹75k - ₹1.2L" },
+      { id: 80, name: "Aakash Institute", exam: "NEET / JEE", city: "South Delhi", loc: "Lajpat Nagar", usp: "Central South Delhi connectivity", fee: "₹1.2L - ₹1.5L" },
+      { id: 81, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "South Delhi", loc: "Kalindi Kunj / Jamia Nagar", usp: "Proximity to Okhla and Noida Sector 125", fee: "₹50k - ₹80k" },
+      { id: 82, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "South Delhi", loc: "Jamia Nagar", usp: "Affordable quality batch for JEE & NEET", fee: "₹60k - ₹95k" },
+      { id: 83, name: "Allen Career Institute", exam: "JEE / NEET", city: "South Delhi", loc: "Lajpat Nagar", usp: "Premier South-East Delhi branch", fee: "₹1.3L - ₹1.7L" },
+      { id: 84, name: "Aakash Institute", exam: "NEET / JEE", city: "East Delhi", loc: "Shahdara", usp: "Serving North-East & East Delhi students", fee: "₹1.1L - ₹1.5L" },
+      { id: 85, name: "FIITJEE", exam: "JEE (Main/Adv)", city: "East Delhi", loc: "Anand Vihar", usp: "Convenient location near ISBT & Trans-Yamuna", fee: "₹1.3L - ₹1.9L" },
+      { id: 86, name: "PW Vidyapeeth", exam: "JEE / NEET", city: "East Delhi", loc: "Yamuna Vihar", usp: "High capacity affordable learning center", fee: "₹48k - ₹75k" },
+      { id: 87, name: "Motion Education", exam: "JEE / NEET", city: "Central Delhi", loc: "Karol Bagh", usp: "Kota classroom lectures & study modules", fee: "₹85k - ₹1.2L" },
+      { id: 88, name: "Prime IIT Academy", exam: "JEE (Adv)", city: "South Delhi", loc: "Vasant Kunj", usp: "Small batch size with individual mentoring", fee: "₹1.1L - ₹1.5L" },
+      { id: 89, name: "Aakash Institute", exam: "NEET / JEE", city: "South Delhi", loc: "Vasant Kunj", usp: "Serving South Delhi & Gurgaon border aspirants", fee: "₹1.2L - ₹1.6L" },
+      { id: 90, name: "Zenith Classes", exam: "NEET / Foundation", city: "South Delhi", loc: "Badarpur", usp: "Affordable local coaching near Mathura Road", fee: "₹45k - ₹70k" },
+      { id: 91, name: "Apex Medical Academy", exam: "NEET Special", city: "South Delhi", loc: "Malviya Nagar", usp: "Dedicated medical faculty for droppers", fee: "₹70k - ₹1.0L" },
+      { id: 92, name: "Focus IIT", exam: "JEE (Main)", city: "West Delhi", loc: "Tilak Nagar", usp: "Board exam + JEE Main strategy guidance", fee: "₹55k - ₹85k" },
+      { id: 93, name: "Chaitanya Academy", exam: "JEE / NEET", city: "South Delhi", loc: "Kalu Sarai", usp: "South Indian rigorous schedule format", fee: "₹1.1L - ₹1.5L" },
+      { id: 94, name: "Aakash Institute", exam: "NEET / JEE", city: "North Delhi", loc: "Shalimar Bagh", usp: "Established medical prep branch", fee: "₹1.1L - ₹1.5L" },
+      { id: 95, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "West Delhi", loc: "Dwarka Sector 10", usp: "Serving Dwarka sub-city aspirants", fee: "₹1.2L - ₹1.6L" },
+      { id: 96, name: "Scholars Academy", exam: "Foundation", city: "South Delhi", loc: "Saket", usp: "Class 8 to 10 base builder for IIT/NEET", fee: "₹60k - ₹90k" },
+      { id: 97, name: "IITians Forum", exam: "JEE (Adv)", city: "East Delhi", loc: "Vasundhara Enclave", usp: "Near Noida border, small batch sizes", fee: "₹80k - ₹1.2L" },
+      { id: 98, name: "Target Academy", exam: "NEET Medical", city: "Noida", loc: "Sector 110", usp: "Expressway connected local center", fee: "₹60k - ₹85k" },
+      { id: 99, name: "Bright Future Classes", exam: "JEE / NEET", city: "Greater Noida", loc: "Knowledge Park 2", usp: "Hostel proximity coaching center", fee: "₹55k - ₹80k" },
+      { id: 100, name: "CoachingKhoj Premier Network", exam: "JEE / NEET", city: "Noida", loc: "Online / Direct Portal", usp: "Free academic counseling & instant demo class booking", fee: "Free Service" }
+    ];
+
+    function renderCoachingCards(items) {
+      const grid
