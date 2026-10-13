@@ -364,4 +364,119 @@
       { id: 92, name: "Focus IIT", exam: "JEE (Main)", city: "West Delhi", loc: "Tilak Nagar", usp: "Board exam + JEE Main strategy guidance", fee: "₹55k - ₹85k" },
       { id: 93, name: "Chaitanya Academy", exam: "JEE / NEET", city: "South Delhi", loc: "Kalu Sarai", usp: "South Indian rigorous schedule format", fee: "₹1.1L - ₹1.5L" },
       { id: 94, name: "Aakash Institute", exam: "NEET / JEE", city: "North Delhi", loc: "Shalimar Bagh", usp: "Established medical prep branch", fee: "₹1.1L - ₹1.5L" },
-      { id: 95, name: "
+      { id: 95, name: "VMC (Vidyamandir)", exam: "JEE / NEET", city: "West Delhi", loc: "Dwarka Sector 10", usp: "Serving Dwarka sub-city aspirants", fee: "₹1.2L - ₹1.6L" },
+      { id: 96, name: "Scholars Academy", exam: "Foundation", city: "South Delhi", loc: "Saket", usp: "Class 8 to 10 base builder for IIT/NEET", fee: "₹60k - ₹90k" },
+      { id: 97, name: "IITians Forum", exam: "JEE (Adv)", city: "East Delhi", loc: "Vasundhara Enclave", usp: "Near Noida border, small batch sizes", fee: "₹80k - ₹1.2L" },
+      { id: 98, name: "Target Academy", exam: "NEET Medical", city: "Noida", loc: "Sector 110", usp: "Expressway connected local center", fee: "₹60k - ₹85k" },
+      { id: 99, name: "Bright Future Classes", exam: "JEE / NEET", city: "Greater Noida", loc: "Knowledge Park 2", usp: "Hostel proximity coaching center", fee: "₹55k - ₹85k" },
+      { id: 100, name: "CoachingKhoj Premier Network", exam: "JEE / NEET", city: "Noida", loc: "Online / Direct Portal", usp: "Free academic counseling & instant demo class booking", fee: "Free Service" }
+    ];
+
+    function renderCoachingCards(items) {
+      const grid = document.getElementById('coachingGrid');
+      const countLabel = document.getElementById('resultsCount');
+      if (!grid || !countLabel) return;
+
+      grid.innerHTML = '';
+      countLabel.textContent = `Showing ${items.length} institute(s)`;
+
+      if(items.length === 0) {
+        grid.innerHTML = `<div class="col-span-3 text-center py-12 text-gray-500 font-semibold">No institutes match your search criteria. Try clearing filters!</div>`;
+        return;
+      }
+
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-xl shadow-md border overflow-hidden hover:shadow-lg transition flex flex-col justify-between";
+        card.innerHTML = `
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-lg text-gray-900">${item.name}</h3>
+              <span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-semibold">${item.city}</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-3">📍 ${item.loc}</p>
+            <div class="space-y-1 text-xs text-gray-600 mb-4">
+              <p><strong>Target Exam:</strong> ${item.exam}</p>
+              <p><strong>Approx Fee:</strong> ${item.fee}</p>
+              <p class="text-gray-500 italic mt-1">${item.usp}</p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="#leadForm" class="block text-center w-full bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold py-2 rounded-lg text-xs transition">
+              Book Free Demo Class
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterCoaching() {
+      const searchInput = document.getElementById('searchInput');
+      const cityFilter = document.getElementById('cityFilter');
+      const examFilter = document.getElementById('examFilter');
+
+      const searchText = searchInput ? searchInput.value.trim().toLowerCase() : '';
+      const selectedCity = cityFilter ? cityFilter.value : 'ALL';
+      const selectedExam = examFilter ? examFilter.value : 'ALL';
+
+      const filtered = coachingData.filter(item => {
+        const matchesSearch = !searchText || 
+          item.name.toLowerCase().includes(searchText) || 
+          item.loc.toLowerCase().includes(searchText) || 
+          item.usp.toLowerCase().includes(searchText);
+
+        const matchesCity = selectedCity === 'ALL' || item.city.toLowerCase() === selectedCity.toLowerCase();
+        
+        let matchesExam = true;
+        if (selectedExam !== 'ALL') {
+          if (selectedExam === 'JEE') {
+            matchesExam = item.exam.toLowerCase().includes('jee');
+          } else if (selectedExam === 'NEET') {
+            matchesExam = item.exam.toLowerCase().includes('neet');
+          } else if (selectedExam === 'Foundation') {
+            matchesExam = item.exam.toLowerCase().includes('foundation');
+          }
+        }
+
+        return matchesSearch && matchesCity && matchesExam;
+      });
+
+      renderCoachingCards(filtered);
+    }
+
+    function toggleModal() {
+      const modal = document.getElementById('pdfModal');
+      if (modal) {
+        modal.classList.toggle('hidden');
+      }
+    }
+
+    // Dynamic URL Parameter Handling & Initial Render
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetLocation = urlParams.get('location');
+
+      if (targetLocation) {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+          searchInput.value = targetLocation;
+        }
+
+        const leadLocationInput = document.getElementById('leadLocationInput');
+        if (leadLocationInput) {
+          leadLocationInput.value = targetLocation;
+        }
+
+        const sectionHeading = document.getElementById('sectionHeading');
+        if (sectionHeading) {
+          sectionHeading.textContent = `Top Coaching Institutes in ${targetLocation}`;
+        }
+      }
+
+      filterCoaching();
+    });
+  </script>
+
+</body>
+</html>
